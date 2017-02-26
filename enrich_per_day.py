@@ -200,6 +200,7 @@ def external_BBC_data(credits,start,end):
 		for pid in elem.keys():
 			for credit_name in elem[pid].keys():
 				credit_role = elem[pid][credit_name]
+				#currently not available
 # 				url = "http://eculture2.cs.vu.nl:3020/enrichCredit?pid=%s&credit_name=%s&credit_role=%s&source=%s&indent=true" % (pid,urllib.quote(credit_name.encode('utf8')),urllib.quote(credit_role.encode('utf8')),'BBC')
 				print url
 				try:
@@ -215,6 +216,7 @@ def external_BBC_data(credits,start,end):
 	synopses = data[1]
 	for pid in titles.iterkeys():
 		title = titles[pid]
+		#currently not available
 #		url = "http://eculture2.cs.vu.nl:3020/enrichTitle?pid=%s&title=%s&source=%s&indent=true" % (pid,urllib.quote(title.encode('utf8')),'BBC')
 		
 		try:
@@ -226,7 +228,8 @@ def external_BBC_data(credits,start,end):
 			
 	for pid in synopses.iterkeys():
 		synopsis = synopses[pid]
-		url = "http://eculture2.cs.vu.nl:3020/enrichSynopsis?pid=%s&synopsis=%s&source=%s&indent=true" % (pid,urllib.quote(synopsis.encode('utf8')),'BBC')
+		#currently not available
+		#url = "http://eculture2.cs.vu.nl:3020/enrichSynopsis?pid=%s&synopsis=%s&source=%s&indent=true" % (pid,urllib.quote(synopsis.encode('utf8')),'BBC')
 		try:
 			json_data = urllib2.urlopen(url)
 			data = json.load(json_data)
